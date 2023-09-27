@@ -21,6 +21,15 @@ describe('BackEnd', () => {
     expect(backEnd).toBeDefined();
   });
 
-  // Add more tests for each function or method in the BackEnd component
-  // Ensure to cover all possible execution paths in your tests
+  test('should call init method without errors', () => {
+    const backEnd = new BackEnd(app, config);
+    expect(backEnd.init).toBeDefined();
+    expect(() => backEnd.init()).not.toThrow();
+  });
+
+  test('should call deploy method without errors', () => {
+    const backEnd = new BackEnd(app, config);
+    expect(backEnd.deploy).toBeDefined();
+    expect(() => backEnd.deploy()).not.toThrow();
+  });
 });
