@@ -23,4 +23,15 @@ describe('FrontEnd', () => {
 
   // Add more tests for each function or method in the FrontEnd component
   // Ensure to cover all possible execution paths in your tests
+  test('should call init method without errors', () => {
+    const frontEnd = new FrontEnd(app, config, 'us-east-1');
+    expect(frontEnd.init).toBeDefined();
+    expect(() => frontEnd.init()).not.toThrow();
+  });
+
+  test('should call deploy method without errors', () => {
+    const frontEnd = new FrontEnd(app, config, 'us-east-1');
+    expect(frontEnd.deploy).toBeDefined();
+    expect(() => frontEnd.deploy()).not.toThrow();
+  });
 });
