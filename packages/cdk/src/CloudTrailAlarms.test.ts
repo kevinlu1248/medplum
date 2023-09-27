@@ -21,6 +21,15 @@ describe('CloudTrailAlarms', () => {
     expect(cloudTrailAlarms).toBeDefined();
   });
 
-  // Add more tests for each function or method in the CloudTrailAlarms component
-  // Ensure to cover all possible execution paths in your tests
+  test('should call init method without errors', () => {
+    const cloudTrailAlarms = new CloudTrailAlarms(app, config);
+    expect(cloudTrailAlarms.init).toBeDefined();
+    expect(() => cloudTrailAlarms.init()).not.toThrow();
+  });
+
+  test('should call deploy method without errors', () => {
+    const cloudTrailAlarms = new CloudTrailAlarms(app, config);
+    expect(cloudTrailAlarms.deploy).toBeDefined();
+    expect(() => cloudTrailAlarms.deploy()).not.toThrow();
+  });
 });
